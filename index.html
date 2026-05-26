@@ -4,10 +4,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Specialist Theo — Catch every call. Book every job.</title>
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
 <link rel="icon" type="image/x-icon" href="favicon/favicon.ico" />
 <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
 <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
@@ -231,6 +227,8 @@
     gap:120px;
     align-items:center;
   }
+  .how-grid.reverse{grid-template-columns:1fr 480px}
+  .how-grid.reverse .how-right{order:-1}
   .how-right h3{
     font-family:'Bebas Neue',sans-serif;
     font-size:64px;
@@ -335,6 +333,215 @@
     font-family:'JetBrains Mono',monospace;
     letter-spacing:.1em;
   }
+
+  /* Review card mockup */
+  .mock-stack{
+    display:flex;flex-direction:column;align-items:stretch;gap:14px;
+    width:420px;max-width:100%;
+  }
+  .mock-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--dim);
+    display:flex;align-items:center;gap:12px;
+  }
+  .mock-label .dot{
+    width:8px;height:8px;border-radius:50%;
+    background:#ff3b30;
+    box-shadow:0 0 0 4px rgba(255,59,48,.12);
+  }
+  .mock-label.good .dot{background:#34d399;box-shadow:0 0 0 4px rgba(52,211,153,.15)}
+  .mock-label.warn .dot{background:#fbbf24;box-shadow:0 0 0 4px rgba(251,191,36,.15)}
+
+  .review-card{
+    background:#fff;
+    color:#1a1a1a;
+    padding:22px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    font-family:'Inter',sans-serif;
+  }
+  .review-head{
+    display:flex;align-items:center;gap:12px;
+    margin-bottom:10px;
+  }
+  .review-avatar{
+    width:36px;height:36px;
+    border-radius:50%;
+    background:#e8a87c;
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;font-size:14px;
+  }
+  .review-meta{display:flex;flex-direction:column;line-height:1.2}
+  .review-name{font-size:14px;font-weight:600;color:#1a1a1a}
+  .review-date{font-size:12px;color:#5f6368}
+  .review-stars{
+    color:#fbbc04;font-size:14px;letter-spacing:2px;
+    margin-bottom:8px;
+  }
+  .review-stars .empty{color:#dadce0}
+  .review-body{
+    font-size:13px;color:#202124;line-height:1.5;
+  }
+
+  .draft-card{
+    background:var(--card);
+    border:1px solid var(--orange);
+    padding:20px;
+  }
+  .draft-head{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--orange);
+    margin-bottom:10px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .draft-body{
+    font-size:13.5px;color:var(--body);line-height:1.55;
+    margin-bottom:16px;
+  }
+  .draft-actions{display:flex;gap:8px}
+  .draft-btn{
+    flex:1;
+    height:36px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-weight:600;
+  }
+  .draft-btn.primary{background:var(--orange);color:#15100a}
+  .draft-btn.secondary{background:transparent;border:1px solid var(--line);color:var(--white)}
+
+  /* MMS photo mock */
+  .mms-photo{
+    align-self:flex-end;
+    width:72%;
+    aspect-ratio:4/3;
+    background:
+      linear-gradient(135deg, #5a4a3a 0%, #2e2722 60%, #1a1612 100%);
+    border-radius:14px;
+    margin-bottom:4px;
+    position:relative;
+    overflow:hidden;
+    border:1px solid #2a2520;
+  }
+  .mms-photo::before{
+    content:"";
+    position:absolute;
+    inset:18% 14% 14% 14%;
+    background:
+      repeating-linear-gradient(90deg, rgba(0,0,0,.45) 0 2px, rgba(180,90,40,.35) 2px 4px),
+      linear-gradient(180deg, #8c5a3a 0%, #4a2e1c 100%);
+    border-radius:4px;
+    box-shadow:inset 0 0 30px rgba(0,0,0,.6);
+  }
+  .mms-photo::after{
+    content:"";
+    position:absolute;
+    top:55%;left:50%;transform:translate(-50%,-50%);
+    width:40%;aspect-ratio:1;
+    border-radius:50%;
+    background:radial-gradient(circle, #1a0f08 0%, #2a1810 60%, transparent 70%);
+    border:3px solid rgba(20,12,8,.7);
+    box-shadow:inset 0 0 20px rgba(0,0,0,.8);
+  }
+  .mms-tag{
+    align-self:flex-end;
+    font-size:10px;
+    color:#8e8e93;
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:.08em;
+    margin:0 4px 4px 0;
+  }
+  .typing{
+    align-self:flex-start;
+    background:#1c1c1e;
+    padding:10px 14px;
+    border-radius:18px;
+    border-bottom-left-radius:5px;
+    display:flex;gap:4px;
+    margin-bottom:2px;
+  }
+  .typing span{
+    width:6px;height:6px;border-radius:50%;
+    background:#8e8e93;
+    animation:bounce 1.2s infinite ease-in-out;
+  }
+  .typing span:nth-child(2){animation-delay:.15s}
+  .typing span:nth-child(3){animation-delay:.3s}
+  @keyframes bounce{
+    0%,60%,100%{transform:translateY(0);opacity:.4}
+    30%{transform:translateY(-4px);opacity:1}
+  }
+
+  /* Voice call mock */
+  .voice-screen{
+    background:#000;
+    border-radius:42px;
+    padding:54px 14px 22px;
+    min-height:560px;
+    display:flex;flex-direction:column;
+  }
+  .call-banner{
+    text-align:center;
+    padding:24px 0 18px;
+    border-bottom:1px solid #1a1a24;
+    margin-bottom:14px;
+  }
+  .call-banner .status{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#34d399;
+    margin-bottom:8px;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .call-banner .status::before{
+    content:"";width:6px;height:6px;border-radius:50%;
+    background:#34d399;
+    box-shadow:0 0 0 4px rgba(52,211,153,.2);
+    animation:pulse 1.6s infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .call-banner .name{
+    color:#fff;font-size:18px;font-weight:600;
+    margin-bottom:4px;
+  }
+  .call-banner .sub{color:#8e8e93;font-size:12px}
+  .call-banner .timer{
+    color:#34d399;font-family:'JetBrains Mono',monospace;
+    font-size:13px;margin-top:6px;letter-spacing:.05em;
+  }
+  .transcript-head{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#8e8e93;
+    padding:0 4px 10px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .transcript{
+    display:flex;flex-direction:column;gap:10px;
+    flex:1;padding:0 2px;
+  }
+  .vline{
+    font-size:12.5px;line-height:1.4;
+    color:#e5e5ea;
+  }
+  .vline .who{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.14em;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:3px;
+  }
+  .vline.caller .who{color:#8e8e93}
+  .vline.theo .who{color:var(--orange)}
+  .vline.caller{color:#c7c7cc}
+  .vline.theo{color:#fff}
 
   /* ====================== FEATURES ====================== */
   .features{
@@ -767,8 +974,11 @@
     .stat:last-child{border-bottom:0}
     .stat-num{font-size:88px}
     .how-grid{grid-template-columns:1fr;gap:60px}
+    .how-grid.reverse{grid-template-columns:1fr}
+    .how-grid.reverse .how-right{order:0}
     .how-right h3{font-size:42px}
     .phone{width:300px}
+    .mock-stack{width:100%}
     .features{grid-template-columns:1fr;border-left:0}
     .feat{padding:36px 24px}
     .tiers{grid-template-columns:1fr;gap:20px}
@@ -886,8 +1096,187 @@
   </div>
 </section>
 
+<!-- ============== REVIEW RESPONDER ============== -->
+<section id="reviews" data-screen-label="04 Review Responder">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow muted">Review responder</div>
+      <h2 class="headline">Bad review. <span class="orange">⚡ Theo replies.</span></h2>
+    </div>
+
+    <div class="how-grid reverse">
+      <div class="how-right">
+        <h3>Reviews answered <span class="orange">while you sleep.</span></h3>
+        <p>Theo watches every Google review the second it hits. He drafts a real reply in your voice — not a generic "thanks for the feedback." You approve in one tap, or let him auto-post the 5-stars.</p>
+        <p><strong>Faster review replies = higher Google rank.</strong> Google literally weights response time in local search. Nobody else in town is replying at 2 AM.</p>
+        <p>Bad reviews stop costing you future customers. Good reviews compound.</p>
+      </div>
+
+      <div class="mock-stack">
+        <div class="mock-label warn"><span class="dot"></span>New 2-star review · Google</div>
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar">S</div>
+            <div class="review-meta">
+              <span class="review-name">Sarah M.</span>
+              <span class="review-date">2 days ago · Local Guide</span>
+            </div>
+          </div>
+          <div class="review-stars">★★<span class="empty">★★★</span></div>
+          <div class="review-body">"Tech showed up an hour late and didn't explain the repair. Not happy."</div>
+        </div>
+
+        <div class="draft-card">
+          <div class="draft-head">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M11.5 1.5l3 3-9 9H2.5v-3l9-9z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            Specialist Theo drafted a reply
+          </div>
+          <div class="draft-body">"Hi Sarah — really sorry about the late arrival, that's not how we run. I'd love to make it right. Can you text us at (828) 555-0142 so we can talk through the repair and earn back the stars? — Mike, owner"</div>
+          <div class="draft-actions">
+            <button class="draft-btn primary">Approve &amp; Post</button>
+            <button class="draft-btn secondary">Edit First</button>
+          </div>
+        </div>
+
+        <div class="mock-label good"><span class="dot"></span>Drafted in 4 min · Posts on approval</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOLLOW-UP BOT ============== -->
+<section id="followup" data-screen-label="05 Follow-Up Bot">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow muted">Follow-up + rebooking bot</div>
+      <h2 class="headline">Old customers. <span class="orange">New revenue.</span></h2>
+    </div>
+
+    <div class="how-grid">
+      <div class="phone-stack">
+        <div class="mock-label"><span class="dot" style="background:var(--orange);box-shadow:0 0 0 4px rgba(255,107,0,.18)"></span>Reaching out · 6-month tune-up</div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <div class="name">Specialist Theo</div>
+              <div class="sub">+1 (828) 555-0142</div>
+            </div>
+            <div class="messages">
+              <div class="msg-time">Tue 9:14 AM</div>
+              <div class="msg theo">Hey John — Mike from Blue Ridge HVAC. It's been 6 months since we replaced your condenser. Want to lock in a tune-up before summer hits?</div>
+              <div class="msg theo">We've got Thursday or Friday open.</div>
+              <div class="msg cust">Thursday works</div>
+              <div class="msg theo">Done — booked you for Thursday 9 AM. Mike will text 15 min before he heads over. 👍</div>
+              <div class="msg cust">Appreciate it</div>
+              <div class="msg theo">Anytime. Catch you Thursday.</div>
+            </div>
+          </div>
+        </div>
+        <div class="mock-label good"><span class="dot"></span>Rebooked in 60s · Zero calls made</div>
+      </div>
+
+      <div class="how-right">
+        <h3>Most of your money is sitting in <span class="orange">old customers.</span></h3>
+        <p>Local trades make <strong>60% of their revenue</strong> from repeat customers. Most shops do zero to bring them back.</p>
+        <p>Theo automatically texts past customers at the right moments — 6 months after install, before peak season, when a warranty's about to expire. Books them straight onto your calendar.</p>
+        <p>An average customer who'd otherwise vanish becomes <strong>$400–$2K/year in recurring work.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PHOTO-TO-QUOTE ============== -->
+<section id="quote" data-screen-label="06 Photo-to-Quote">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow muted">Photo-to-quote generator</div>
+      <h2 class="headline">Photo in. <span class="orange">Quote out.</span></h2>
+    </div>
+
+    <div class="how-grid reverse">
+      <div class="how-right">
+        <h3>Customers want a number <span class="orange">before they book.</span></h3>
+        <p>They don't want to schedule a visit just to find out what something costs. They text a photo, want a ballpark, then decide.</p>
+        <p>Theo recognizes the equipment, pulls from <strong>your pricing matrix</strong> (we build it during setup), and sends back a real quote range in seconds. Then books the diagnostic if they're in.</p>
+        <p>The customer who texted three companies books with the one who answered. <strong>That's you now.</strong></p>
+      </div>
+
+      <div class="phone-stack">
+        <div class="mock-label"><span class="dot"></span>Incoming MMS · 11:23 AM</div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <div class="name">Specialist Theo</div>
+              <div class="sub">+1 (828) 555-0142</div>
+            </div>
+            <div class="messages">
+              <div class="mms-photo" role="img" aria-label="Photo of a rusted condenser unit"></div>
+              <div class="msg cust">How much to fix this?</div>
+              <div class="typing"><span></span><span></span><span></span></div>
+              <div class="msg theo">Looks like a 10+ year old Goodman condenser, likely a failed compressor.</div>
+              <div class="msg theo">Diagnostic + repair runs <strong>$450–$890</strong> depending on parts. Replacement on a unit this age is usually <strong>$4,200–$6,800</strong> — might be worth the math given your bills.</div>
+              <div class="msg theo">Want Mike to come take a look Thursday at 2?</div>
+              <div class="msg cust">Yes please</div>
+            </div>
+          </div>
+        </div>
+        <div class="mock-label good"><span class="dot"></span>Quoted &amp; booked · Competitor still at lunch</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== AI RECEPTIONIST ============== -->
+<section id="receptionist" data-screen-label="07 AI Receptionist">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow muted">AI receptionist</div>
+      <h2 class="headline">The phone rings. <span class="orange">Theo answers.</span></h2>
+    </div>
+
+    <div class="how-grid">
+      <div class="phone-stack">
+        <div class="mock-label"><span class="dot"></span>Incoming call · 11:42 AM</div>
+        <div class="phone">
+          <div class="voice-screen">
+            <div class="call-banner">
+              <div class="status">Theo answering</div>
+              <div class="name">+1 (828) 264-9112</div>
+              <div class="sub">Incoming call</div>
+              <div class="timer">00:38</div>
+            </div>
+            <div class="transcript-head">
+              <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="4"/></svg>
+              Live transcript
+            </div>
+            <div class="transcript">
+              <div class="vline caller"><span class="who">Caller</span>"Hey, my heat's not working. Can someone come out today?"</div>
+              <div class="vline theo"><span class="who">Theo</span>"Sorry to hear that — let me get you taken care of. Is this for a home or business?"</div>
+              <div class="vline caller"><span class="who">Caller</span>"Home."</div>
+              <div class="vline theo"><span class="who">Theo</span>"Got it. And the address?"</div>
+              <div class="vline caller"><span class="who">Caller</span>"412 Howard Street."</div>
+              <div class="vline theo"><span class="who">Theo</span>"Perfect. Mike's got a window between 2 and 4 PM today, or first thing tomorrow at 8 AM. Which works better?"</div>
+              <div class="vline caller"><span class="who">Caller</span>"Today, please."</div>
+              <div class="vline theo"><span class="who">Theo</span>"Booked. You'll get a text confirmation and Mike will call when he's 15 min out. Stay warm."</div>
+            </div>
+          </div>
+        </div>
+        <div class="mock-label good"><span class="dot"></span>Real voice · Real booking · No "press 1"</div>
+      </div>
+
+      <div class="how-right">
+        <h3>The receptionist you <span class="orange">can't afford.</span></h3>
+        <p>The biggest cost in a trades business is the front-desk person you can't quite justify. Theo answers every call in a natural voice, qualifies the lead, checks your real calendar, and books the job.</p>
+        <p>Sounds human because he's <strong>trained on your services, your pricing, your booking rules.</strong> Knows when not to book — "Mike doesn't do commercial, I'll have him call you back."</p>
+        <p><strong>$40K/year human receptionist</strong> replaced by <strong>$300/mo of AI</strong> that works 24/7, never calls out, never has a bad day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== FEATURES ============== -->
-<section id="features" data-screen-label="04 Features">
+<section id="features" data-screen-label="08 Features">
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow muted">What's in the box</div>
@@ -929,7 +1318,7 @@
 </section>
 
 <!-- ============== MATH ============== -->
-<section id="math" data-screen-label="05 The Math">
+<section id="math" data-screen-label="09 The Math">
   <div class="wrap">
     <div class="sec-head" style="text-align:center;margin-left:auto;margin-right:auto">
       <div class="eyebrow muted" style="justify-content:center">The math</div>
@@ -964,7 +1353,7 @@
 </section>
 
 <!-- ============== PRICING ============== -->
-<section id="pricing" data-screen-label="06 Pricing">
+<section id="pricing" data-screen-label="10 Pricing">
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow muted">Pricing</div>
@@ -1026,7 +1415,7 @@
 </section>
 
 <!-- ============== FAQ ============== -->
-<section id="faq" data-screen-label="07 FAQ">
+<section id="faq" data-screen-label="11 FAQ">
   <div class="wrap">
     <div class="sec-head" style="text-align:center;margin-left:auto;margin-right:auto">
       <div class="eyebrow muted" style="justify-content:center">FAQ</div>
@@ -1076,7 +1465,7 @@
 </section>
 
 <!-- ============== FINAL CTA ============== -->
-<section id="demo" class="final" data-screen-label="08 Final CTA">
+<section id="demo" class="final" data-screen-label="12 Final CTA">
   <div class="wrap final-inner">
     <div class="eyebrow">Last thing</div>
     <h2>Stop losing jobs <br/>to voicemail.</h2>
@@ -1087,7 +1476,7 @@
 </section>
 
 <!-- ============== DEMO FORM ============== -->
-<section id="demo-form" data-screen-label="09 Demo Form">
+<section id="demo-form" data-screen-label="13 Demo Form">
   <div class="wrap">
     <div class="sec-head" style="text-align:center;margin-left:auto;margin-right:auto">
       <div class="eyebrow muted" style="justify-content:center">Get started</div>
@@ -1165,7 +1554,7 @@
 </section>
 
 <!-- ============== FOOTER ============== -->
-<footer data-screen-label="10 Footer">
+<footer data-screen-label="14 Footer">
   <div class="wrap footer-inner">
     <div class="logo">SPECIALIST THEO<span class="dot">.</span></div>
     <div class="footer-meta">© 2026 Specialist Theo</div>
