@@ -624,6 +624,120 @@
     text-transform:uppercase;
   }
 
+  /* ====================== DEMO FORM ====================== */
+  .form-wrap{max-width:720px;margin:0 auto}
+  .lead-form{display:flex;flex-direction:column;gap:24px}
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .field{display:flex;flex-direction:column;gap:10px}
+  .field-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .field-label em{
+    font-style:normal;
+    color:var(--orange);
+    margin-left:2px;
+  }
+  .field-label em.opt{
+    color:var(--dim);
+    letter-spacing:.12em;
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+  }
+  .lead-form input,
+  .lead-form select,
+  .lead-form textarea{
+    background:var(--card);
+    border:1px solid var(--line);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    font-size:15px;
+    padding:16px 18px;
+    border-radius:2px;
+    width:100%;
+    transition:border-color .2s ease, background .2s ease;
+    appearance:none;
+    -webkit-appearance:none;
+  }
+  .lead-form textarea{
+    resize:vertical;
+    min-height:130px;
+    line-height:1.55;
+  }
+  .lead-form select{
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23ff6b00' stroke-width='1.5' fill='none' stroke-linecap='square'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 18px center;
+    padding-right:44px;
+    cursor:pointer;
+  }
+  .lead-form select option{
+    background:var(--card);
+    color:var(--white);
+  }
+  .lead-form input:focus,
+  .lead-form select:focus,
+  .lead-form textarea:focus{
+    outline:none;
+    border-color:var(--orange);
+    background:#16161f;
+  }
+  .lead-form input::placeholder,
+  .lead-form textarea::placeholder{color:var(--dim)}
+  .form-submit{
+    margin-top:8px;
+    height:56px;
+    font-size:13px;
+  }
+  .form-submit:disabled{opacity:.6;cursor:wait}
+  .form-meta{
+    text-align:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--dim);
+    margin-top:4px;
+  }
+  .form-success{
+    text-align:center;
+    padding:72px 24px;
+    background:var(--card);
+    border:1px solid var(--line);
+  }
+  .success-icon{
+    width:64px;height:64px;
+    border-radius:50%;
+    background:var(--orange);
+    color:#15100a;
+    display:inline-flex;align-items:center;justify-content:center;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:24px;
+  }
+  .form-success h3{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:48px;
+    color:var(--white);
+    letter-spacing:.005em;
+    margin-bottom:16px;
+    line-height:1;
+  }
+  .form-success p{
+    color:var(--body);
+    font-size:17px;
+    max-width:440px;
+    margin:0 auto;
+    line-height:1.6;
+  }
+
   /* ====================== RESPONSIVE ====================== */
   @media (max-width:900px){
     .wrap{padding:0 24px}
@@ -655,6 +769,9 @@
     .math-table .total td{font-size:32px;padding:28px 4px}
     .faq-q{font-size:22px;padding:24px 4px}
     .final{padding:100px 0}
+    .form-row{grid-template-columns:1fr;gap:20px}
+    .form-success{padding:52px 20px}
+    .form-success h3{font-size:36px}
     .footer-inner{flex-direction:column;align-items:flex-start;gap:16px}
   }
 </style>
@@ -665,7 +782,7 @@
 <nav class="nav" data-screen-label="Nav">
   <div class="wrap nav-inner">
     <a href="#top" class="logo">SPECIALIST THEO<span class="dot">.</span></a>
-    <a href="mailto:specialisttheoteam@gmail.com?subject=Specialist%20Theo%20Demo%20Request&body=Hi%20Specialist%20Theo%20team%2C%0A%0AI%27m%20interested%20in%20a%20demo.%0A%0ABusiness%20name%3A%0AIndustry%3A%0ALocation%3A%0ABest%20number%20to%20reach%20me%3A%0A%0AThanks%2C" class="btn btn-orange btn-sm">Book a demo</a>
+    <a href="#demo-form" class="btn btn-orange btn-sm">Book a demo</a>
   </div>
 </nav>
 
@@ -674,7 +791,7 @@
 <!-- ============== HERO ============== -->
 <header class="hero" data-screen-label="01 Hero">
   <div class="wrap hero-inner">
-    <div class="eyebrow">AI for local trades · Boone, NC</div>
+    <div class="eyebrow">AI for local trades</div>
     <h1 class="display">
       <span class="line">Catch every call.</span>
       <span class="line outline">Book every</span>
@@ -682,7 +799,7 @@
     </h1>
     <p class="lede">Theo's the AI sidekick that texts back every missed call in 10 seconds, qualifies the lead, and books the job — while you're up on the roof.</p>
     <div class="hero-cta">
-      <a href="mailto:specialisttheoteam@gmail.com?subject=Specialist%20Theo%20Demo%20Request&body=Hi%20Specialist%20Theo%20team%2C%0A%0AI%27m%20interested%20in%20a%20demo.%0A%0ABusiness%20name%3A%0AIndustry%3A%0ALocation%3A%0ABest%20number%20to%20reach%20me%3A%0A%0AThanks%2C" class="btn btn-orange">Book a 15-min demo →</a>
+      <a href="#demo-form" class="btn btn-orange">Book a 15-min demo →</a>
       <a href="#how" class="btn btn-outline">See how it works</a>
     </div>
     <div class="hero-meta">Setup in 30 min · No new phone · Cancel anytime</div>
@@ -738,7 +855,7 @@
               <div class="msg theo">Hey, this is Theo with Blue Ridge HVAC — sorry we missed your call. What's going on?</div>
               <div class="msg cust">AC quit on me. House is 84°.</div>
               <div class="msg theo">Ugh, that's brutal in this heat. Are you the homeowner, and what's your address?</div>
-              <div class="msg cust">Yes — 412 Howard St, Boone</div>
+              <div class="msg cust">Yes — 412 Howard St</div>
               <div class="msg theo">Got it. Mike can swing by today between 4–6 PM or first thing tomorrow at 8 AM. Which works?</div>
               <div class="msg cust">Today please 🙏</div>
               <div class="msg theo">You're booked for 4–6 PM today. Mike will text when he's 15 min out. Diagnostic is $89, waived if you book the repair. Sound good?</div>
@@ -940,7 +1057,7 @@
 
         <div class="faq-row">
           <button class="faq-q">Who built this?<span class="plus"></span></button>
-          <div class="faq-a"><div class="faq-a-inner">We're a small team in Boone, NC. Software people who grew up around trades and got tired of watching local shops lose work to bigger guys with call centers. Theo levels the playing field. If you want to grab coffee at Bald Guy Brew and talk shop, come by.</div></div>
+          <div class="faq-a"><div class="faq-a-inner">We're a small team of software people who grew up around trades and got tired of watching local shops lose work to bigger guys with call centers. Theo levels the playing field. If you want to hop on a quick call and talk shop, just reach out.</div></div>
         </div>
 
       </div>
@@ -954,20 +1071,131 @@
     <div class="eyebrow">Last thing</div>
     <h2>Stop losing jobs <br/>to voicemail.</h2>
     <p class="sub">15 minutes on a call with us. We'll show you Theo running on a shop just like yours and answer every question you've got.</p>
-    <a href="mailto:specialisttheoteam@gmail.com?subject=Specialist%20Theo%20Demo%20Request&body=Hi%20Specialist%20Theo%20team%2C%0A%0AI%27m%20interested%20in%20a%20demo.%0A%0ABusiness%20name%3A%0AIndustry%3A%0ALocation%3A%0ABest%20number%20to%20reach%20me%3A%0A%0AThanks%2C" class="btn btn-dark" style="height:56px;padding:0 32px;font-size:13px">Book my demo →</a>
+    <a href="#demo-form" class="btn btn-dark" style="height:56px;padding:0 32px;font-size:13px">Book my demo →</a>
     <div class="final-meta">15 minutes · No pressure · No card required</div>
   </div>
 </section>
 
+<!-- ============== DEMO FORM ============== -->
+<section id="demo-form" data-screen-label="09 Demo Form">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;margin-left:auto;margin-right:auto">
+      <div class="eyebrow muted" style="justify-content:center">Get started</div>
+      <h2 class="headline">Book your demo.</h2>
+      <p class="lede" style="margin:24px auto 0">Tell us a little about your shop. We'll reach out within one business day to set up a 15-minute walkthrough — no pressure, no card required.</p>
+    </div>
+
+    <div class="form-wrap">
+      <!-- TODO: After signing up at formspree.io, replace REPLACE_WITH_FORM_ID in the action URL below with your actual Formspree form ID -->
+      <form id="demoForm" class="lead-form" action="https://formspree.io/f/xqejyyan" method="POST">
+        <input type="hidden" name="_subject" value="Specialist Theo — New Demo Request" />
+
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Business name <em>*</em></span>
+            <input type="text" name="business_name" required autocomplete="organization" />
+          </label>
+          <label class="field">
+            <span class="field-label">Your name <em>*</em></span>
+            <input type="text" name="name" required autocomplete="name" />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Phone number <em>*</em></span>
+            <input type="tel" name="phone" required autocomplete="tel" />
+          </label>
+          <label class="field">
+            <span class="field-label">Email <em>*</em></span>
+            <input type="email" name="email" required autocomplete="email" />
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label class="field">
+            <span class="field-label">Industry <em>*</em></span>
+            <select name="industry" required>
+              <option value="">Select one…</option>
+              <option>HVAC</option>
+              <option>Plumbing</option>
+              <option>Garage Door</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="field-label">Missed calls / week <em>*</em></span>
+            <select name="missed_calls_per_week" required>
+              <option value="">Select one…</option>
+              <option>1–5</option>
+              <option>5–15</option>
+              <option>15–30</option>
+              <option>30+</option>
+              <option>Not sure</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="field-label">Anything else we should know? <em class="opt">optional</em></span>
+          <textarea name="notes" rows="4" placeholder="Tools you use, hours, special requests…"></textarea>
+        </label>
+
+        <button type="submit" class="btn btn-orange form-submit">Send my demo request →</button>
+        <p class="form-meta">We'll respond within 1 business day · No spam, ever</p>
+      </form>
+
+      <div id="formSuccess" class="form-success" hidden>
+        <div class="success-icon">✓</div>
+        <h3>Thanks — we got it.</h3>
+        <p>One of us will reach out within a business day to set up your demo. Talk soon.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== FOOTER ============== -->
-<footer data-screen-label="09 Footer">
+<footer data-screen-label="10 Footer">
   <div class="wrap footer-inner">
     <div class="logo">SPECIALIST THEO<span class="dot">.</span></div>
-    <div class="footer-meta">Built in Boone, NC · © 2026</div>
+    <div class="footer-meta">© 2026 Specialist Theo</div>
   </div>
 </footer>
 
 <script>
+  // Demo form: AJAX submit to Formspree so we can show an inline success state
+  const demoForm = document.getElementById('demoForm');
+  const demoSuccess = document.getElementById('formSuccess');
+  if (demoForm) {
+    demoForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = demoForm.querySelector('.form-submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending…';
+      submitBtn.disabled = true;
+      try {
+        const res = await fetch(demoForm.action, {
+          method: 'POST',
+          body: new FormData(demoForm),
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          demoForm.hidden = true;
+          demoSuccess.hidden = false;
+          demoSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          alert('Something went wrong sending your request. Please try again or email specialisttheoteam@gmail.com directly.');
+        }
+      } catch (err) {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert('Network error. Please try again or email specialisttheoteam@gmail.com directly.');
+      }
+    });
+  }
+
   // FAQ expand/collapse
   document.querySelectorAll('.faq-row').forEach(row => {
     const q = row.querySelector('.faq-q');
