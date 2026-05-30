@@ -158,20 +158,20 @@
     padding:40px 0 100px;
   }
   .video-wrap{
-    max-width:1080px;
+    display:flex;
+    justify-content:center;
     margin:0 auto;
-    position:relative;
-    background:#000;
-    border:1px solid var(--line);
-    border-radius:8px;
-    overflow:hidden;
-    box-shadow:0 40px 100px rgba(0,0,0,.55), 0 0 0 1px rgba(255,107,0,.08);
   }
   .video-wrap video{
     display:block;
-    width:100%;
+    max-width:min(1080px, 92vw);
+    max-height:80vh;
+    width:auto;
     height:auto;
     background:#000;
+    border:1px solid var(--line);
+    border-radius:8px;
+    box-shadow:0 40px 100px rgba(0,0,0,.55), 0 0 0 1px rgba(255,107,0,.08);
   }
 
   /* ====== CTA ====== */
